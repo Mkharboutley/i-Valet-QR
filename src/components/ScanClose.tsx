@@ -102,17 +102,17 @@ const ScanClose: React.FC = () => {
             </div>
           )}
 
-          {/* Scanning Frame with Glass Effect - Made bigger and more transparent */}
+          {/* Scanning Frame - Completely transparent with no blur */}
           <div className="relative w-64 h-64 mx-auto">
-            {/* Main scanning frame with glass effect - increased size and reduced opacity */}
-            <div className="w-full h-full glass-morphism border-2 border-white/20 rounded-3xl relative overflow-hidden">
-              {/* Animated scanning overlay - made more transparent */}
-              <div className="absolute inset-0 border-2 border-blue-400/30 rounded-3xl animate-pulse" />
-              {/* Corner indicators - made more transparent */}
-              <div className="absolute top-2 left-2 w-8 h-8 border-l-2 border-t-2 border-white/40 rounded-tl-lg" />
-              <div className="absolute top-2 right-2 w-8 h-8 border-r-2 border-t-2 border-white/40 rounded-tr-lg" />
-              <div className="absolute bottom-2 left-2 w-8 h-8 border-l-2 border-b-2 border-white/40 rounded-bl-lg" />
-              <div className="absolute bottom-2 right-2 w-8 h-8 border-r-2 border-b-2 border-white/40 rounded-br-lg" />
+            {/* Main scanning frame - removed glass morphism and blur */}
+            <div className="w-full h-full border-2 border-white/10 rounded-3xl relative">
+              {/* Animated scanning overlay - made completely transparent */}
+              <div className="absolute inset-0 border-2 border-transparent rounded-3xl" />
+              {/* Corner indicators - minimal visibility */}
+              <div className="absolute top-2 left-2 w-8 h-8 border-l-2 border-t-2 border-white/20 rounded-tl-lg" />
+              <div className="absolute top-2 right-2 w-8 h-8 border-r-2 border-t-2 border-white/20 rounded-tr-lg" />
+              <div className="absolute bottom-2 left-2 w-8 h-8 border-l-2 border-b-2 border-white/20 rounded-bl-lg" />
+              <div className="absolute bottom-2 right-2 w-8 h-8 border-r-2 border-b-2 border-white/20 rounded-br-lg" />
             </div>
           </div>
 
