@@ -1,0 +1,52 @@
+
+.login-container {
+  @apply flex flex-col items-center justify-center h-full px-4 sm:px-8;
+  height: 100vh;
+  height: 100dvh;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.login-box {
+  @apply glass-card w-full max-w-sm p-6 space-y-4;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+/* Ticket List - Proper mobile optimization with consistent measurements */
+.ticket-list {
+  @apply h-[calc(100vh-22rem)] overflow-y-auto pr-2;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.ticket-card {
+  @apply glass-morphism-strong rounded-xl;
+  touch-action: manipulation;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+  /* Consistent card height */
+  min-height: 4rem;
+  max-height: 4rem;
+}
+
+/* Fixed height container for mobile app */
+.fixed-height-container {
+  @apply flex flex-col;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.dashboard-content {
+  @apply h-full;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}

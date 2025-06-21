@@ -1,0 +1,152 @@
+
+/* Animated Background - Mobile First */
+.animated-bg {
+  @apply absolute inset-0 overflow-hidden;
+}
+
+.animated-bg::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-br from-blue-500/20 via-slate-700/20 to-slate-800/20
+    animate-[gradient_15s_ease_infinite] bg-[length:400%_400%];
+}
+
+.animated-bg::after {
+  content: '';
+  @apply absolute inset-0 backdrop-blur-3xl;
+}
+
+/* Enhanced animated gradient with more visible colors and stronger animation */
+.animated-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(-45deg, #1a1b4b, #2563eb, #1e40af, #3b82f6, #1a1b4b);
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+@keyframes gradient {
+  0% { 
+    background-position: 0% 50%; 
+  }
+  25% { 
+    background-position: 100% 50%; 
+  }
+  50% { 
+    background-position: 100% 100%; 
+  }
+  75% { 
+    background-position: 0% 100%; 
+  }
+  100% { 
+    background-position: 0% 50%; 
+  }
+}
+
+/* Glowing Orbs - Mobile Optimized with matte dark blue */
+.glow-orb {
+  @apply absolute rounded-full opacity-40 blur-[80px] animate-pulse;
+}
+
+.glow-orb-1 {
+  @apply glow-orb bg-blue-800/30 w-[300px] h-[300px] -top-[150px] -left-[150px];
+}
+
+.glow-orb-2 {
+  @apply glow-orb bg-slate-700/30 w-[400px] h-[400px] -bottom-[200px] -right-[200px];
+}
+
+/* Logo Elegant Animation */
+.logo-elegant-animation {
+  animation: logoElegantEntrance 2s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+             logoElegantGlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate 1s,
+             logoElegantFloat 6s cubic-bezier(0.4, 0, 0.6, 1) infinite 2s;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  will-change: transform, filter, opacity;
+}
+
+.logo-elegant-animation:hover {
+  transform: scale(1.08) translateY(-2px);
+  filter: drop-shadow(0 8px 25px rgba(74, 129, 209, 0.4)) 
+          drop-shadow(0 0 20px rgba(74, 129, 209, 0.3));
+}
+
+@keyframes logoElegantEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9) rotateX(15deg);
+    filter: blur(8px) drop-shadow(0 0 0px rgba(74, 129, 209, 0));
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-5px) scale(0.98) rotateX(5deg);
+    filter: blur(2px) drop-shadow(0 0 10px rgba(74, 129, 209, 0.2));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+    filter: blur(0px) drop-shadow(0 0 8px rgba(74, 129, 209, 0.3));
+  }
+}
+
+@keyframes logoElegantGlow {
+  0% {
+    filter: drop-shadow(0 0 8px rgba(74, 129, 209, 0.3))
+            drop-shadow(0 0 15px rgba(74, 129, 209, 0.1));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(74, 129, 209, 0.5))
+            drop-shadow(0 0 30px rgba(74, 129, 209, 0.2))
+            drop-shadow(0 0 40px rgba(74, 129, 209, 0.1));
+  }
+  100% {
+    filter: drop-shadow(0 0 12px rgba(74, 129, 209, 0.4))
+            drop-shadow(0 0 25px rgba(74, 129, 209, 0.15));
+  }
+}
+
+@keyframes logoElegantFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(-1px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(-0.5deg);
+  }
+}
+
+/* Enhanced glass morphism for logo container */
+.logo-elegant-animation::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  background: linear-gradient(45deg, transparent, rgba(74, 129, 209, 0.1), transparent);
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  animation: logoHaloRotate 8s linear infinite;
+}
+
+.logo-elegant-animation:hover::before {
+  opacity: 1;
+}
+
+@keyframes logoHaloRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

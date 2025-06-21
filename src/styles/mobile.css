@@ -1,0 +1,30 @@
+
+/* Mobile-specific adjustments for smaller screens */
+@media (max-width: 480px) {
+  .glow-orb-1 {
+    @apply w-[200px] h-[200px] -top-[100px] -left-[100px];
+  }
+  
+  .glow-orb-2 {
+    @apply w-[250px] h-[250px] -bottom-[125px] -right-[125px];
+  }
+}
+
+/* Mobile safe areas - Essential for mobile app */
+@supports (padding: max(0px)) {
+  .mobile-safe-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  .mobile-safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  
+  .mobile-safe-left {
+    padding-left: max(1rem, env(safe-area-inset-left));
+  }
+  
+  .mobile-safe-right {
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}

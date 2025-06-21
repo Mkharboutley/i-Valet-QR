@@ -1,0 +1,45 @@
+
+/* Enhanced Glass Morphism - Mobile Optimized */
+.glass-morphism {
+  @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.05]
+    shadow-[0_8px_32px_rgba(0,0,0,0.12)]
+    hover:bg-white/[0.06] hover:border-white/[0.08]
+    transition-all duration-300;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.glass-morphism-strong {
+  @apply bg-white/[0.08] backdrop-blur-2xl border border-white/[0.1]
+    shadow-[0_8px_32px_rgba(0,0,0,0.2)]
+    hover:bg-white/[0.12] hover:border-white/[0.15]
+    transition-all duration-300;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.glass-card {
+  @apply glass-morphism-strong rounded-2xl;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.glass-button {
+  @apply glass-morphism rounded-xl w-full h-12 text-white
+    text-lg font-bold active:scale-[0.98] disabled:opacity-50
+    hover:shadow-[0_8px_32px_rgba(255,255,255,0.1)]
+    select-none min-h-[44px];
+  /* Mobile touch improvements */
+  touch-action: manipulation;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.glass-input {
+  @apply glass-morphism w-full h-12 px-4 text-white
+    rounded-xl placeholder:text-white/40
+    focus:bg-white/[0.08] focus:border-white/[0.15]
+    text-base;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}

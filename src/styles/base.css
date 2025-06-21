@@ -1,0 +1,93 @@
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 300; /* Light weight */
+  }
+
+  html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* Mobile-first approach - Optimized for mobile devices with fixed viewport */
+  html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    /* Prevent scrolling on mobile for app-like experience */
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 300; /* Light weight */
+  }
+
+  input, button {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 300; /* Light weight */
+  }
+
+  body {
+    @apply bg-[#0a0f1a] text-foreground;
+    /* Mobile optimizations with fixed positioning */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+    overscroll-behavior: none;
+    /* Prevent scrolling and fix viewport */
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 300; /* Light weight */
+  }
+
+  #root {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 300; /* Light weight */
+  }
+
+  main {
+    overflow: hidden;
+  }
+
+  /* Mobile viewport fix */
+  @supports (-webkit-touch-callout: none) {
+    html, body {
+      height: -webkit-fill-available;
+    }
+  }
+}

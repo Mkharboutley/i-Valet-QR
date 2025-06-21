@@ -1,0 +1,266 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 300; /* Light weight */
+  }
+
+  html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* Mobile-first approach - Optimized for mobile devices with fixed viewport */
+  html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    /* Prevent scrolling on mobile for app-like experience */
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 300; /* Light weight */
+  }
+
+  input, button {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 300; /* Light weight */
+  }
+
+  body {
+    @apply bg-[#0a0f1a] text-foreground;
+    /* Mobile optimizations with fixed positioning */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+    overscroll-behavior: none;
+    /* Prevent scrolling and fix viewport */
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 300; /* Light weight */
+  }
+
+  #root {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 300; /* Light weight */
+  }
+
+  main {
+    overflow: hidden;
+  }
+
+  /* Mobile viewport fix */
+  @supports (-webkit-touch-callout: none) {
+    html, body {
+      height: -webkit-fill-available;
+    }
+  }
+}
+
+/* Enhanced Glass Morphism - Mobile Optimized */
+.glass-morphism {
+  @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.05]
+    shadow-[0_8px_32px_rgba(0,0,0,0.12)]
+    hover:bg-white/[0.06] hover:border-white/[0.08]
+    transition-all duration-300;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.login-container {
+  @apply flex flex-col items-center justify-center h-full px-4 sm:px-8;
+  height: 100vh;
+  height: 100dvh;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.login-box {
+  @apply glass-card w-full max-w-sm p-6 space-y-4;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.glass-morphism-strong {
+  @apply bg-white/[0.08] backdrop-blur-2xl border border-white/[0.1]
+    shadow-[0_8px_32px_rgba(0,0,0,0.2)]
+    hover:bg-white/[0.12] hover:border-white/[0.15]
+    transition-all duration-300;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.glass-card {
+  @apply glass-morphism-strong rounded-2xl;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.glass-button {
+  @apply glass-morphism rounded-xl w-full h-12 text-white
+    text-lg font-bold active:scale-[0.98] disabled:opacity-50
+    hover:shadow-[0_8px_32px_rgba(255,255,255,0.1)]
+    select-none min-h-[44px];
+  /* Mobile touch improvements */
+  touch-action: manipulation;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.glass-input {
+  @apply glass-morphism w-full h-12 px-4 text-white
+    rounded-xl placeholder:text-white/40
+    focus:bg-white/[0.08] focus:border-white/[0.15]
+    text-base;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+/* Animated Background - Mobile First */
+.animated-bg {
+  @apply absolute inset-0 overflow-hidden;
+}
+
+.animated-bg::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-br from-blue-500/20 via-slate-700/20 to-slate-800/20
+    animate-[gradient_15s_ease_infinite] bg-[length:400%_400%];
+}
+
+.animated-bg::after {
+  content: '';
+  @apply absolute inset-0 backdrop-blur-3xl;
+}
+
+/* Enhanced animated gradient for mobile - Waving between custom colors */
+.animated-gradient {
+  background: linear-gradient(-45deg, #1e1f3d, #4a81d1, #1e1f3d, #4a81d1);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glowing Orbs - Mobile Optimized with matte dark blue */
+.glow-orb {
+  @apply absolute rounded-full opacity-40 blur-[80px] animate-pulse;
+}
+
+.glow-orb-1 {
+  @apply glow-orb bg-blue-800/30 w-[300px] h-[300px] -top-[150px] -left-[150px];
+}
+
+.glow-orb-2 {
+  @apply glow-orb bg-slate-700/30 w-[400px] h-[400px] -bottom-[200px] -right-[200px];
+}
+
+/* Mobile-specific adjustments for smaller screens */
+@media (max-width: 480px) {
+  .glow-orb-1 {
+    @apply w-[200px] h-[200px] -top-[100px] -left-[100px];
+  }
+  
+  .glow-orb-2 {
+    @apply w-[250px] h-[250px] -bottom-[125px] -right-[125px];
+  }
+}
+
+/* Ticket List - Mobile Optimized with controlled scrolling */
+.ticket-list {
+  @apply h-[calc(100vh-20rem)] overflow-y-auto pr-2 space-y-3;
+  /* Mobile scroll improvements */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.ticket-card {
+  @apply glass-morphism-strong rounded-xl p-4 h-auto max-h-[10rem];
+  /* Mobile touch improvements */
+  touch-action: manipulation;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+/* Mobile safe areas - Essential for mobile app */
+@supports (padding: max(0px)) {
+  .mobile-safe-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  .mobile-safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  
+  .mobile-safe-left {
+    padding-left: max(1rem, env(safe-area-inset-left));
+  }
+  
+  .mobile-safe-right {
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
+/* Fixed height container for mobile app */
+.fixed-height-container {
+  @apply flex flex-col;
+  /* Mobile viewport units with fixed positioning */
+  height: 100vh;
+  height: 100dvh; /* Dynamic viewport height */
+  overflow: hidden;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+.dashboard-content {
+  @apply h-full;
+  height: 100vh;
+  height: 100dvh; /* Dynamic viewport height */
+  overflow: hidden;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
