@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import QrScanner from 'qr-scanner';
@@ -103,17 +102,17 @@ const ScanClose: React.FC = () => {
             </div>
           )}
 
-          {/* Scanning Frame with Glass Effect */}
-          <div className="relative w-48 h-48 mx-auto">
-            {/* Main scanning frame with glass effect */}
-            <div className="w-full h-full glass-morphism border-2 border-white/30 rounded-3xl relative overflow-hidden">
-              {/* Animated scanning overlay */}
-              <div className="absolute inset-0 border-2 border-blue-400/50 rounded-3xl animate-pulse" />
-              {/* Corner indicators */}
-              <div className="absolute top-2 left-2 w-6 h-6 border-l-2 border-t-2 border-white/60 rounded-tl-lg" />
-              <div className="absolute top-2 right-2 w-6 h-6 border-r-2 border-t-2 border-white/60 rounded-tr-lg" />
-              <div className="absolute bottom-2 left-2 w-6 h-6 border-l-2 border-b-2 border-white/60 rounded-bl-lg" />
-              <div className="absolute bottom-2 right-2 w-6 h-6 border-r-2 border-b-2 border-white/60 rounded-br-lg" />
+          {/* Scanning Frame with Glass Effect - Made bigger and more transparent */}
+          <div className="relative w-64 h-64 mx-auto">
+            {/* Main scanning frame with glass effect - increased size and reduced opacity */}
+            <div className="w-full h-full glass-morphism border-2 border-white/20 rounded-3xl relative overflow-hidden">
+              {/* Animated scanning overlay - made more transparent */}
+              <div className="absolute inset-0 border-2 border-blue-400/30 rounded-3xl animate-pulse" />
+              {/* Corner indicators - made more transparent */}
+              <div className="absolute top-2 left-2 w-8 h-8 border-l-2 border-t-2 border-white/40 rounded-tl-lg" />
+              <div className="absolute top-2 right-2 w-8 h-8 border-r-2 border-t-2 border-white/40 rounded-tr-lg" />
+              <div className="absolute bottom-2 left-2 w-8 h-8 border-l-2 border-b-2 border-white/40 rounded-bl-lg" />
+              <div className="absolute bottom-2 right-2 w-8 h-8 border-r-2 border-b-2 border-white/40 rounded-br-lg" />
             </div>
           </div>
 
